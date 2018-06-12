@@ -19,7 +19,7 @@
           <% @quotes.each_with_index do |quote, index| %>
             <tr>
               <th scope="row"><%= index + 1 %></th>
-              <td><%= quote.title %></td>
+              <td class="col-md-8"><%= quote.title %></td>
               <td><%= quote.published %></td>
               <td>
                 <%#= link_to 'Show', quote, class: 'btn btn-success' %>
