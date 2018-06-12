@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quotes</h1>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="bgc-white bd bdrs-3 p-20 mB-20">
+       <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Quote</th>
+            <th scope="col">Published</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @quotes.each_with_index do |quote, index| %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td><%= quote.title %></td>
+              <td><%= quote.published %></td>
+              <td>
+                <%#= link_to 'Show', quote, class: 'btn btn-success' %>
+                <%= link_to 'Edit', edit_quote_path(quote), class: 'btn btn-warning' %> 
+                <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>    
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        <%= will_paginate @quotes %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Quote', new_quote_path, class: 'btn btn-primary' %>

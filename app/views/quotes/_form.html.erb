@@ -1,0 +1,33 @@
+<div class="container">
+<%= form_for(quote,:class => "form-horizontal")  do |f| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% quote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, :class => "control-label col-sm-2" %>
+    <%= f.text_area :title, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :published, :class => "control-label col-sm-2" %>
+    <%= f.check_box :published, :class => "form-control" %>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-6"><%= f.submit 'Save Quote', :class => 'btn btn-primary' %></div>
+    <div class="col-sm-6"><%= link_to 'Back', quotes_path, :class => 'btn btn-success' %></div>
+  </div>
+
+</div>
+
+<% end %>
