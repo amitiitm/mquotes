@@ -10,7 +10,7 @@ class QuoteHandler < ApplicationRecord
 			update_quote_handler([0])
 			q = Quote.order("RANDOM()").limit(1)
 		end
-		q.title.titleize
+		q.title
 	end
 
 	def self.update_quote_handler(quote_ids)
