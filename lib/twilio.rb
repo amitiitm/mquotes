@@ -2,8 +2,8 @@ module Twilio
 	require 'twilio-ruby'
 
 	# put your own credentials here these are test credentials
-	#account_sid = 'AC53490cf62f106b462c915f0f5c6b200f'
-	#auth_token = '80bc6df65e11a4a48d3c6ea415f680c2'
+	# account_sid = 'AC53490cf62f106b462c915f0f5c6b200f'
+	# auth_token = '80bc6df65e11a4a48d3c6ea415f680c2'
 	account_sid = ENV['TWILIO_ACCOUNT_SID']
 	auth_token = ENV['TWILIO_AUTH_TOKEN']
 	# set up a client to talk to the Twilio REST API
