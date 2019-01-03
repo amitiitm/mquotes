@@ -27,4 +27,26 @@ namespace :parse do
 		end
 		Quote.where(title: [nil, '']).delete_all
 	end
+
+	task :add_quotes => :environment do
+
+		# Create a Docx::Document object for our existing docx file
+		doc = Docx::Document.open('quotes_jan_2019.docx')
+		# Retrieve and display paragraphs
+		i = 1
+		doc.paragraphs.each do |p|
+			begin
+				i += 1
+				puts "***************#{i}**************"
+				if p.to_s.length > 0
+				  Quote.create(title: p.to_s.strip, published: true) 
+				else
+					puts '----------BLANK STRING-----------'
+				end
+			rescue Exception => ex
+				puts "Exception : #{ex}"
+			end
+		end
+		Quote.where(title: [nil, '']).delete_all
+	end
 end
