@@ -31,7 +31,7 @@ namespace :parse do
 	task :add_quotes => :environment do
 
 		# Create a Docx::Document object for our existing docx file
-		doc = Docx::Document.open('quotes_jan_2019.docx')
+		doc = Docx::Document.open('quotes_jan_2020.docx')
 		# Retrieve and display paragraphs
 		i = 1
 		doc.paragraphs.each do |p|

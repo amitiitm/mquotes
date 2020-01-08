@@ -2,7 +2,7 @@
 require 'twilio'
 include ActionView::Helpers::NumberHelper
 namespace :scheduler do
-	desc "This rake will calculate the remaining days adn send sms alert using twilio"
+	desc "This rake will calculate the remaining days and send sms alert using twilio"
 	task :send_quote => :environment do
 		## defining constants for mobile number on which sms is to be sent
 		MOBILE = '+12679692118'
