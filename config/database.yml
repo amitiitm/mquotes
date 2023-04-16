@@ -9,8 +9,8 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: postgres
-  password: root
+  username: yqeoxoegnquctk
+  password: b11d092f5f4367fc7a2677d95a02c9fb562512c28a2a4eb2c1a801aa5b2d0ab6
 
 development:
   <<: *default
